@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSS Agricultural AI - Space Settlement Farming Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="space-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🌱 NSS AgriBot</h1>
+                <p>Space Settlement Agricultural Intelligence</p>
+            </div>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Agricultural Expert Assistant</h2>
+                <p>Ask me anything about hydroponics, aeroponics, Terra Preta, or ITEK in space settlements</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm your Agricultural AI assistant for space settlements. I specialize in hydroponics, aeroponics, Terra Preta, and Indigenous Traditional Ecological Knowledge (ITEK).</p>
+                        <p>What would you like to know about sustainable farming in space?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="Ask about hydroponics, aeroponics, Terra Preta, or ITEK..." />
+                    <button id="sendButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m22 2-7 20-4-9-9-4Z"/>
+                            <path d="M22 2 11 13"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    <span>💡 Tip: Ask about nutrient solutions, growing systems, or traditional ecological knowledge</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-base">
+            <h3>Available Knowledge Areas</h3>
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <div class="card-icon">💧</div>
+                    <h4>Hydroponics</h4>
+                    <p>Soil-less plant cultivation using nutrient solutions</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="card-icon">🌫️</div>
+                    <h4>Aeroponics</h4>
+                    <p>Plants grown in air with misted nutrients</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="card-icon">🌱</div>
+                    <h4>Terra Preta</h4>
+                    <p>Biochar-enriched soil for enhanced fertility</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="card-icon">🌿</div>
+                    <h4>ITEK</h4>
+                    <p>Indigenous Traditional Ecological Knowledge</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
