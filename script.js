@@ -1,20 +1,33 @@
 class NSSChatbot {
     constructor() {
+        console.log('NSSChatbot constructor called');
         this.chatMessages = document.getElementById('chatMessages');
         this.userInput = document.getElementById('userInput');
         this.sendButton = document.getElementById('sendButton');
+
+        console.log('DOM elements:', { chatMessages: this.chatMessages, userInput: this.userInput, sendButton: this.sendButton });
+
+        if (!this.chatMessages || !this.userInput || !this.sendButton) {
+            console.error('Required DOM elements not found!');
+            return;
+        }
 
         this.initializeEventListeners();
         this.addWelcomeMessage();
     }
 
     initializeEventListeners() {
+        console.log('Initializing event listeners');
         // Send message on button click
-        this.sendButton.addEventListener('click', () => this.sendMessage());
+        this.sendButton.addEventListener('click', () => {
+            console.log('Send button clicked');
+            this.sendMessage();
+        });
 
         // Send message on Enter key
         this.userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
+                console.log('Enter key pressed');
                 this.sendMessage();
             }
         });
@@ -44,9 +57,12 @@ Ask me anything about sustainable farming in space environments!`
     }
 
     async sendMessage() {
+        console.log('sendMessage called');
         const message = this.userInput.value.trim();
 
         if (!message) return;
+
+        console.log('Sending message:', message);
 
         // Display user message
         const userMessage = {
@@ -64,6 +80,7 @@ Ask me anything about sustainable farming in space environments!`
 
         try {
             // Send to API
+            console.log('Making API call to /api/chat');
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
@@ -72,11 +89,14 @@ Ask me anything about sustainable farming in space environments!`
                 body: JSON.stringify({ message })
             });
 
+            console.log('API response status:', response.status);
+
             if (!response.ok) {
-                throw new Error('API request failed');
+                throw new Error(`API request failed: ${response.status}`);
             }
 
             const data = await response.json();
+            console.log('API response data:', data);
 
             // Remove typing indicator
             this.hideTypingIndicator();
