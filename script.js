@@ -168,40 +168,4 @@ Ask me anything about sustainable farming in space environments!`
 // Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new NSSChatbot();
-
-    // Add some CSS for typing indicator
-    const style = document.createElement('style');
-    style.textContent = `
-        .typing-indicator {
-            opacity: 0.7;
-        }
-
-        .typing-dots {
-            display: flex;
-            gap: 4px;
-        }
-
-        .typing-dots span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            animation: typing 1.4s infinite ease-in-out;
-        }
-
-        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
-
-        @keyframes typing {
-            0%, 80%, 100% {
-                transform: scale(0);
-                opacity: 0.5;
-            }
-            40% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-    `;
-    document.head.appendChild(style);
 });
